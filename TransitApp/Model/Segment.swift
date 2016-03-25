@@ -11,8 +11,15 @@ import UIKit
 public class Segment: NSObject {
     
     //Segments
-    public enum Mode{
-        case walking, subway, bus, driving, cycling, setup, parking, change
+    public enum Mode:String{
+        case walking = "walking"
+        case subway = "subway"
+        case bus = "bus"
+        case driving = "driving"
+        case cycling = "cycling"
+        case setup = "setup"
+        case parking = "parking"
+        case change = "change"
     }
 
     private let name:String?
@@ -20,23 +27,40 @@ public class Segment: NSObject {
 
     private let travelMode:Mode
     
-    private let segmentDescription: String
-    private let color:UIColor
+    private let segmentDescription: String?
+    private let color:CIColor?
     
     private var iconImage:UIImage?
     private let iconUrl:NSURL
+    private let polyline:String?
     
-    private let polyline:String
+    private var stops:[Stop] = []
     
-    init(dictionary:[String: AnyObject]){
-        self.name = ""
-        self.numStops = 0
-        self.travelMode = .bus
-        self.segmentDescription = ""
-        self.color = UIColor()
+    init(dataDictionary:[String: AnyObject]){
+        self.name = dataDictionary["name"] as? String
+        self.numStops = dataDictionary["num_stops"] as! Int
+        
+        let modeString = dataDictionary["travel_mode"] as! String
+        self.travelMode = Mode(rawValue: modeString)!
+        
+        self.segmentDescription = dataDictionary["description"] as? String
+        
+        let hexColor = dataDictionary["color"] as! String
+        self.color = CIColor(string: hexColor)
+        
         self.iconImage = nil
-        self.iconUrl = NSURL()
-        self.polyline = ""
+        
+        let urlString = dataDictionary["icon_url"] as! String
+        self.iconUrl = NSURL(fileURLWithPath: urlString)
+        self.polyline = dataDictionary["polyline"] as? String
+        
+        if let stopDictionary = dataDictionary["stops"]{
+            for stop in stopDictionary.allObjects{
+                let stopPoint = Stop(dataDictionary: stop as! [String : AnyObject])
+                self.stops.append(stopPoint)
+            }
+        }
+
     }
 
 }

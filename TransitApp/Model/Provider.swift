@@ -15,6 +15,7 @@ class Provider: NSObject {
     private let iosItunesUrl:NSURL?
     private let iosAppUrl:NSURL?
     private let displayName:String?
+
     
     init(dataDictionary:[String: AnyObject]){
         self.name = ""

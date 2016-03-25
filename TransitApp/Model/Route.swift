@@ -11,24 +11,37 @@ import Foundation
 public class Route: NSObject {
     
     //Possible types of routes
-    public enum Type{
-        case public_transport, car_sharing, private_bike, bike_sharing, taxi
+    public enum Type:String{
+        case public_transport = "public_transport", car_sharing = "car_sharing", private_bike = "private_bike", bike_sharing = "bike_sharing", taxi = "taxi"
     }
 
     private let type:Type
     private let provider:String
-    private let segments:[Segment]?
+    private var segments:[Segment] = []
     private var properties:[String: AnyObject]?
-    private let currency:String
-    private let amount:Double
+    private var currency:String? = nil
+    private var amount:Double? = nil
 
     init(dataDictionary:[String: AnyObject]){
-        self.type = .private_bike
-        self.provider = ""
-        self.segments = nil
-        self.properties = nil
-        self.currency = ""
-        self.amount = 0.0
+        
+        let typeString = dataDictionary["type"] as! String
+        self.type = Type(rawValue: typeString)!
+        
+        self.provider = dataDictionary["provider"] as! String
+        self.properties = dataDictionary["properties"] as? [String: AnyObject]
+        
+        if let price = dataDictionary["price"] as? [String: AnyObject]{
+            self.currency = price["currency"] as! String
+            self.amount = price["amount"] as! Double
+        }
+        
+        if let segmentsDictionary = dataDictionary["segments"]{
+            for segment in segmentsDictionary.allObjects{
+                let segmentObject = Segment(dataDictionary: segment as! [String : AnyObject])
+                self.segments.append(segmentObject)
+            }
+        }
+
     }
     
 }

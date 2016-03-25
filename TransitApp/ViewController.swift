@@ -12,11 +12,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        ConnectionManager.sharedInstance.consultRoutesFor("", destination: "", time: "", sucess: { (dic) in
-            print(dic)
-            }) { (error) in
-                print(error)
+        DataManager.sharedInstance.loadRoutes("", destination: "", atTime: nil) { (routes, providers, error) in
+            
         }
     }
 

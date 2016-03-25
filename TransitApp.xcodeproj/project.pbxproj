@@ -25,6 +25,8 @@
 		B1D349461CA5CD1E00DCEF5E /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D349451CA5CD1E00DCEF5E /* Stop.swift */; };
 		B1D349491CA5D8D600DCEF5E /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D349481CA5D8D600DCEF5E /* ConnectionManager.swift */; };
 		B1D3494B1CA5DD0000DCEF5E /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3494A1CA5DD0000DCEF5E /* Provider.swift */; };
+		B1D3494D1CA5E75A00DCEF5E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3494C1CA5E75A00DCEF5E /* LocationManager.swift */; };
+		B1D3494F1CA5E87200DCEF5E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3494E1CA5E87200DCEF5E /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		B1D349451CA5CD1E00DCEF5E /* Stop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stop.swift; path = Model/Stop.swift; sourceTree = "<group>"; };
 		B1D349481CA5D8D600DCEF5E /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectionManager.swift; path = Controller/ConnectionManager.swift; sourceTree = "<group>"; };
 		B1D3494A1CA5DD0000DCEF5E /* Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Provider.swift; path = Model/Provider.swift; sourceTree = "<group>"; };
+		B1D3494C1CA5E75A00DCEF5E /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationManager.swift; path = Controller/LocationManager.swift; sourceTree = "<group>"; };
+		B1D3494E1CA5E87200DCEF5E /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = Controller/DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,7 @@
 		B1BABC561CA5606C00EDB17D /* TransitApp */ = {
 			isa = PBXGroup;
 			children = (
+				B1D349501CA5E89B00DCEF5E /* View */,
 				B1D349471CA5D89300DCEF5E /* Controller */,
 				B103983E1CA5B9640021D093 /* Model */,
 				B103983B1CA5B9250021D093 /* Resources */,
@@ -192,8 +197,17 @@
 			isa = PBXGroup;
 			children = (
 				B1D349481CA5D8D600DCEF5E /* ConnectionManager.swift */,
+				B1D3494C1CA5E75A00DCEF5E /* LocationManager.swift */,
+				B1D3494E1CA5E87200DCEF5E /* DataManager.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		B1D349501CA5E89B00DCEF5E /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,8 +347,10 @@
 				B1D349491CA5D8D600DCEF5E /* ConnectionManager.swift in Sources */,
 				B1D3494B1CA5DD0000DCEF5E /* Provider.swift in Sources */,
 				B1BABC5A1CA5606C00EDB17D /* ViewController.swift in Sources */,
+				B1D3494D1CA5E75A00DCEF5E /* LocationManager.swift in Sources */,
 				B1D349461CA5CD1E00DCEF5E /* Stop.swift in Sources */,
 				B1BABC581CA5606C00EDB17D /* AppDelegate.swift in Sources */,
+				B1D3494F1CA5E87200DCEF5E /* DataManager.swift in Sources */,
 				B10398421CA5BAF70021D093 /* Segment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
