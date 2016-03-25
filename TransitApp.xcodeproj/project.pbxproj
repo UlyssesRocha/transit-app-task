@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B103983D1CA5B9590021D093 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = B103983C1CA5B9590021D093 /* data.json */; };
+		B10398401CA5B97F0021D093 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103983F1CA5B97F0021D093 /* Route.swift */; };
+		B10398421CA5BAF70021D093 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10398411CA5BAF70021D093 /* Segment.swift */; };
 		B1BABC581CA5606C00EDB17D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BABC571CA5606C00EDB17D /* AppDelegate.swift */; };
 		B1BABC5A1CA5606C00EDB17D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BABC591CA5606C00EDB17D /* ViewController.swift */; };
 		B1BABC5D1CA5606C00EDB17D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1BABC5B1CA5606C00EDB17D /* Main.storyboard */; };
@@ -19,6 +22,9 @@
 		B1BABC7B1CA5606C00EDB17D /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BABC7A1CA5606C00EDB17D /* InterfaceController.swift */; };
 		B1BABC7D1CA5606C00EDB17D /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BABC7C1CA5606C00EDB17D /* ExtensionDelegate.swift */; };
 		B1BABC7F1CA5606C00EDB17D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1BABC7E1CA5606C00EDB17D /* Assets.xcassets */; };
+		B1D349461CA5CD1E00DCEF5E /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D349451CA5CD1E00DCEF5E /* Stop.swift */; };
+		B1D349491CA5D8D600DCEF5E /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D349481CA5D8D600DCEF5E /* ConnectionManager.swift */; };
+		B1D3494B1CA5DD0000DCEF5E /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3494A1CA5DD0000DCEF5E /* Provider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +70,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B103983C1CA5B9590021D093 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		B103983F1CA5B97F0021D093 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Route.swift; path = Model/Route.swift; sourceTree = "<group>"; };
+		B10398411CA5BAF70021D093 /* Segment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Segment.swift; path = Model/Segment.swift; sourceTree = "<group>"; };
 		B1BABC541CA5606C00EDB17D /* TransitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1BABC571CA5606C00EDB17D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1BABC591CA5606C00EDB17D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +89,9 @@
 		B1BABC7C1CA5606C00EDB17D /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		B1BABC7E1CA5606C00EDB17D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1BABC801CA5606C00EDB17D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1D349451CA5CD1E00DCEF5E /* Stop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stop.swift; path = Model/Stop.swift; sourceTree = "<group>"; };
+		B1D349481CA5D8D600DCEF5E /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectionManager.swift; path = Controller/ConnectionManager.swift; sourceTree = "<group>"; };
+		B1D3494A1CA5DD0000DCEF5E /* Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Provider.swift; path = Model/Provider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +112,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B103983B1CA5B9250021D093 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B103983C1CA5B9590021D093 /* data.json */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B103983E1CA5B9640021D093 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B103983F1CA5B97F0021D093 /* Route.swift */,
+				B10398411CA5BAF70021D093 /* Segment.swift */,
+				B1D349451CA5CD1E00DCEF5E /* Stop.swift */,
+				B1D3494A1CA5DD0000DCEF5E /* Provider.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		B1BABC4B1CA5606C00EDB17D = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +154,9 @@
 		B1BABC561CA5606C00EDB17D /* TransitApp */ = {
 			isa = PBXGroup;
 			children = (
+				B1D349471CA5D89300DCEF5E /* Controller */,
+				B103983E1CA5B9640021D093 /* Model */,
+				B103983B1CA5B9250021D093 /* Resources */,
 				B1BABC571CA5606C00EDB17D /* AppDelegate.swift */,
 				B1BABC591CA5606C00EDB17D /* ViewController.swift */,
 				B1BABC5B1CA5606C00EDB17D /* Main.storyboard */,
@@ -152,6 +186,14 @@
 				B1BABC801CA5606C00EDB17D /* Info.plist */,
 			);
 			path = "TransitApp WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		B1D349471CA5D89300DCEF5E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B1D349481CA5D8D600DCEF5E /* ConnectionManager.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +301,7 @@
 				B1BABC621CA5606C00EDB17D /* LaunchScreen.storyboard in Resources */,
 				B1BABC5F1CA5606C00EDB17D /* Assets.xcassets in Resources */,
 				B1BABC5D1CA5606C00EDB17D /* Main.storyboard in Resources */,
+				B103983D1CA5B9590021D093 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,8 +329,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B10398401CA5B97F0021D093 /* Route.swift in Sources */,
+				B1D349491CA5D8D600DCEF5E /* ConnectionManager.swift in Sources */,
+				B1D3494B1CA5DD0000DCEF5E /* Provider.swift in Sources */,
 				B1BABC5A1CA5606C00EDB17D /* ViewController.swift in Sources */,
+				B1D349461CA5CD1E00DCEF5E /* Stop.swift in Sources */,
 				B1BABC581CA5606C00EDB17D /* AppDelegate.swift in Sources */,
+				B10398421CA5BAF70021D093 /* Segment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +575,7 @@
 				B1BABC851CA5606C00EDB17D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B1BABC871CA5606C00EDB17D /* Build configuration list for PBXNativeTarget "TransitApp WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -535,6 +584,7 @@
 				B1BABC891CA5606C00EDB17D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B1BABC8B1CA5606C00EDB17D /* Build configuration list for PBXNativeTarget "TransitApp" */ = {
 			isa = XCConfigurationList;
@@ -543,6 +593,7 @@
 				B1BABC8D1CA5606C00EDB17D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

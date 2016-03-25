@@ -12,7 +12,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        ConnectionManager.sharedInstance.consultRoutesFor("", destination: "", time: "", sucess: { (dic) in
+            print(dic)
+            }) { (error) in
+                print(error)
+        }
     }
 
     override func didReceiveMemoryWarning() {
