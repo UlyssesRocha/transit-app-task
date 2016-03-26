@@ -53,7 +53,10 @@ public class Segment: NSObject {
                 self.stops.append(stopPoint)
             }
         }
-
+    }
+    
+    func getArrivalTime()->NSDate?{
+        return self.stops.last?.datetime
     }
 
 }

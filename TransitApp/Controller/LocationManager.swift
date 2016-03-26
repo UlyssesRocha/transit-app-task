@@ -16,6 +16,6 @@ class LocationManager: NSObject {
 
     //MockData
     func getCurrentUserLocation()->CLLocationCoordinate2D{
-        return CLLocationCoordinate2D(latitude: 52.530227, longitude: 13.403356)
+        return CLLocationCoordinate2D(latitude: Constants.latitude, longitude: Constants.longitude )
     }
 }

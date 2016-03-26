@@ -10,7 +10,7 @@ import CoreLocation
 
 public class Stop: NSObject {
     private let location:CLLocationCoordinate2D?
-    private let datetime:NSDate?
+    let datetime:NSDate?
     private let name:String?
     
     init(dataDictionary:[String: AnyObject]){
@@ -27,14 +27,4 @@ public class Stop: NSObject {
     }
 }
 
-extension String {
-    func toDateTime() -> NSDate? {
-        //2015-04-17T13:30:00+02:00
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ssZZZZZ"
-        let date = dateFormatter.dateFromString(self)
-        
-        return date
-    }
-}
 

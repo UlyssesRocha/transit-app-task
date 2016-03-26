@@ -13,14 +13,31 @@ public class Route: NSObject {
     //Possible types of routes
     public enum Type:String{
         case public_transport, car_sharing, private_bike , bike_sharing , taxi
+        
+        func getName() -> String {
+            switch self {
+            case .public_transport:
+                return "Public Transport"
+            case .car_sharing:
+                return "Car Sharing"
+            case .private_bike:
+                return "Private Bike"
+            case .bike_sharing:
+                return "Bike Sharing"
+            case .taxi:
+                return "Taxi"
+            default:
+                return ""
+            }
+        }
     }
 
-    private let type:Type
-    private let provider:String
-    private var segments:[Segment] = []
-    private var properties:[String: AnyObject]?
-    private var currency:String? = nil
-    private var amount:Double? = nil
+    let type:Type
+    let provider:String
+    var segments:[Segment] = []
+    let properties:[String: AnyObject]?
+    let currency:String?
+    let amount:Double?
 
     init(dataDictionary:[String: AnyObject]){
         
@@ -33,6 +50,9 @@ public class Route: NSObject {
         if let price = dataDictionary["price"] as? [String: AnyObject]{
             self.currency = price["currency"] as? String
             self.amount = price["amount"] as? Double
+        }else{
+            self.currency = nil
+            self.amount = nil
         }
         
         if let segmentsDictionary = dataDictionary["segments"]{
@@ -41,7 +61,10 @@ public class Route: NSObject {
                 self.segments.append(segmentObject)
             }
         }
-
+    }
+    
+    func getArrivelTime()->NSDate?{
+       return self.segments.last?.getArrivalTime()
     }
     
 }
