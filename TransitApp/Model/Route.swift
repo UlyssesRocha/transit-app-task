@@ -12,7 +12,7 @@ public class Route: NSObject {
     
     //Possible types of routes
     public enum Type:String{
-        case public_transport = "public_transport", car_sharing = "car_sharing", private_bike = "private_bike", bike_sharing = "bike_sharing", taxi = "taxi"
+        case public_transport, car_sharing, private_bike , bike_sharing , taxi
     }
 
     private let type:Type
@@ -31,8 +31,8 @@ public class Route: NSObject {
         self.properties = dataDictionary["properties"] as? [String: AnyObject]
         
         if let price = dataDictionary["price"] as? [String: AnyObject]{
-            self.currency = price["currency"] as! String
-            self.amount = price["amount"] as! Double
+            self.currency = price["currency"] as? String
+            self.amount = price["amount"] as? Double
         }
         
         if let segmentsDictionary = dataDictionary["segments"]{

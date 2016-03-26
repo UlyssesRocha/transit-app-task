@@ -14,27 +14,34 @@ class DataManager: NSObject {
     
     func loadRoutes(origin:String, destination:String, atTime time:NSDate?, completionHandler:(routes:[Route]?,providers:[Provider]?, error:NSError?)->()){
         
-        ConnectionManager.sharedInstance.consultServerFor(origin, destination: destination, time: time, sucess: { (resultDictionary) in
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
             
-            if let routesDictionary = resultDictionary["routes"], providersDictionary = resultDictionary["provider_attributes"]{
+            ConnectionManager.sharedInstance.consultServerFor(origin, destination: destination, time: time, sucess: { (resultDictionary) in
                 
-                var routeArray:[Route] = []
-                for route in routesDictionary.allObjects{
-                    let testRoute = Route(dataDictionary: route as! [String : AnyObject])
-                    routeArray.append(testRoute)
-                }
-                
-                for provider in providersDictionary.allObjects{
+                if let routesDictionary = resultDictionary["routes"], providersDictionary = resultDictionary["provider_attributes"]{
                     
+                    var routeArray:[Route] = []
+                    var providerArray:[Provider] = []
+                    
+                    /* Create Routes*/
+                    for routeData in routesDictionary.allObjects{
+                        let singleRoute = Route(dataDictionary: routeData as! [String : AnyObject])
+                        routeArray.append(singleRoute)
+                    }
+                    /* Create Providers*/
+                    for providerKey in providersDictionary.allKeys{
+                        if let providerName = providerKey as? String, let providerData = providersDictionary.objectForKey(providerName) as?[String : AnyObject]{
+                            let singleProvider = Provider(name: providerName, dataDictionary: providerData)
+                            providerArray.append(singleProvider)
+                        }
+                    }
+                    
+                    completionHandler(routes: routeArray, providers: providerArray, error: nil)
                 }
-
-            }
-            
-           
-            
             
             }) { (error) in
                 completionHandler(routes: nil,providers: nil,error: error)
+            }
         }
     }
     

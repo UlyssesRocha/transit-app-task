@@ -13,7 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         DataManager.sharedInstance.loadRoutes("", destination: "", atTime: nil) { (routes, providers, error) in
-            
+            print(routes)
+            print(providers)
         }
     }
 

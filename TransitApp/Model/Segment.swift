@@ -12,14 +12,7 @@ public class Segment: NSObject {
     
     //Segments
     public enum Mode:String{
-        case walking = "walking"
-        case subway = "subway"
-        case bus = "bus"
-        case driving = "driving"
-        case cycling = "cycling"
-        case setup = "setup"
-        case parking = "parking"
-        case change = "change"
+        case walking, subway, bus, driving, cycling,  setup, parking, change
     }
 
     private let name:String?
