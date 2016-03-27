@@ -18,7 +18,7 @@ class RouteDetailInterfaceController: WKInterfaceController {
     @IBOutlet var providerLabel: WKInterfaceLabel!
        @IBOutlet var tableView: WKInterfaceTable!
     
-    @IBOutlet var DetailTableView: WKInterfaceTable!
+    @IBOutlet var detailTableView: WKInterfaceTable!
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
@@ -44,10 +44,10 @@ class RouteDetailInterfaceController: WKInterfaceController {
         //properties to present?
        if let details = route.getProperties(){
         
-            self.DetailTableView.setNumberOfRows(details.count, withRowType: "DetailRow")
+            self.detailTableView.setNumberOfRows(details.count, withRowType: "DetailRow")
         
             for rowCounter in 0..<details.count{
-                if let row = self.DetailTableView.rowControllerAtIndex(rowCounter) as? DetailRow {
+                if let row = self.detailTableView.rowControllerAtIndex(rowCounter) as? DetailRow {
                     let key = details.allKeys[rowCounter] as! String
                     let data = details[key] as! String
 
@@ -55,7 +55,6 @@ class RouteDetailInterfaceController: WKInterfaceController {
                 }
             }
         }
-        
         
     }
 

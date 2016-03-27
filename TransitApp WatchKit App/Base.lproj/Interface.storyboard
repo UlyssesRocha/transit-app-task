@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1d8-8l-vDj">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
@@ -16,7 +16,7 @@
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="TransitApp_WatchKit_App" customModuleProvider="target">
+                <controller id="AgC-eL-Hgc">
                     <items>
                         <group width="1" alignment="left" id="0Yg-HF-Qec">
                             <items>
@@ -26,7 +26,7 @@
                             </items>
                         </group>
                         <label alignment="left" text="Torstraße 103, 10119 Berlin" id="vOB-Tj-kKt">
-                            <fontDescription key="font" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="12"/>
+                            <fontDescription key="font" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="11"/>
                         </label>
                         <group width="1" alignment="left" id="RXf-PB-Cpi">
                             <items>
@@ -36,12 +36,15 @@
                             </items>
                         </group>
                         <label alignment="left" text="Leipziger Platz 7, 10117 Berlin" id="oGI-v3-dmV">
-                            <fontDescription key="font" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="11"/>
+                            <fontDescription key="font" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="10"/>
                         </label>
                         <group width="1" alignment="left" id="Mx5-Hv-zMH">
                             <items>
                                 <button width="1" alignment="left" title="Go" id="Sw7-aR-W43">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <segue destination="1d8-8l-vDj" kind="push" id="YB5-uo-eC0"/>
+                                    </connections>
                                 </button>
                             </items>
                         </group>
@@ -63,7 +66,7 @@
                                             <group width="1" alignment="left" spacing="5" id="Z24-OK-CG6">
                                                 <items>
                                                     <label alignment="left" verticalAlignment="center" text="Name" id="ozk-MZ-RjV">
-                                                        <fontDescription key="font" type="system" pointSize="14"/>
+                                                        <fontDescription key="font" type="system" pointSize="13"/>
                                                     </label>
                                                 </items>
                                             </group>
@@ -110,7 +113,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="194" y="406"/>
+            <point key="canvasLocation" x="246" y="419"/>
         </scene>
         <!--Details-->
         <scene sceneID="blK-NY-1Ui">
@@ -163,7 +166,7 @@
                                             <group width="1" alignment="left" spacing="5" id="Gpf-ky-9AH">
                                                 <items>
                                                     <label width="1" alignment="left" verticalAlignment="center" text="Name" numberOfLines="2" id="XEc-9g-Qsf">
-                                                        <fontDescription key="font" type="system" pointSize="19"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                                     </label>
                                                 </items>
                                             </group>
@@ -196,18 +199,18 @@
                         <table alignment="left" id="56y-7n-jKY">
                             <items>
                                 <tableRow identifier="DetailRow" id="hcx-BC-aIV" customClass="DetailRow" customModule="TransitApp_WatchKit_Extension">
-                                    <group key="rootItem" width="1" height="52.5" alignment="left" id="G0T-xi-E35">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="G0T-xi-E35">
                                         <items>
-                                            <group width="1" height="47.5" alignment="left" layout="vertical" id="rCA-VO-O0M">
+                                            <group width="1" alignment="left" layout="vertical" id="rCA-VO-O0M">
                                                 <items>
                                                     <group width="1" alignment="left" id="zGi-ml-Ulo">
                                                         <items>
-                                                            <label width="124" alignment="right" verticalAlignment="center" text="Info" textAlignment="left" id="iXs-nr-TP5">
-                                                                <fontDescription key="font" type="system" pointSize="14"/>
+                                                            <label width="1" alignment="right" verticalAlignment="center" text="Info" textAlignment="left" id="iXs-nr-TP5">
+                                                                <fontDescription key="font" type="system" pointSize="12"/>
                                                             </label>
                                                         </items>
                                                     </group>
-                                                    <label width="1" height="21" alignment="left" verticalAlignment="center" text="Detail" textAlignment="left" numberOfLines="3" id="J84-Xy-Zjt">
+                                                    <label width="1" alignment="left" verticalAlignment="center" text="Detail" textAlignment="left" numberOfLines="3" id="J84-Xy-Zjt">
                                                         <fontDescription key="font" type="system" pointSize="13"/>
                                                     </label>
                                                 </items>
@@ -224,8 +227,8 @@
                         </table>
                     </items>
                     <connections>
-                        <outlet property="DetailTableView" destination="56y-7n-jKY" id="pjw-xq-IRt"/>
                         <outlet property="arrivalTime" destination="xUq-yL-qho" id="Phz-g3-Jee"/>
+                        <outlet property="detailTableView" destination="56y-7n-jKY" id="5y8-Ra-zFa"/>
                         <outlet property="nameLabel" destination="XHe-Gg-Hfl" id="Xx0-KS-WfY"/>
                         <outlet property="priceLabel" destination="fjm-IF-nik" id="K1a-Kb-5uj"/>
                         <outlet property="providerLabel" destination="MQ6-ug-1BY" id="8m7-Zt-CFY"/>
@@ -233,7 +236,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="470" y="438"/>
+            <point key="canvasLocation" x="481" y="461.75"/>
         </scene>
     </scenes>
 </document>
