@@ -21,7 +21,6 @@ class RoutesTableViewController: UITableViewController {
             if error != nil{
                 return
             }
-            
             self?.routes = routes
             self?.providers = providers
             self?.tableView.reloadData()
@@ -42,8 +41,10 @@ class RoutesTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("routeCell", forIndexPath: indexPath) as! RouteCell
-        
-        cell.load(routes![indexPath.row])
+        autoreleasepool { 
+            let route = routes![indexPath.row]
+            cell.load(route)
+        }
         
         return cell
     }

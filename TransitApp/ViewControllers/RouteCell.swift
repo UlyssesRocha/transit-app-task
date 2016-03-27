@@ -47,7 +47,7 @@ class RouteCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDe
     
     override func prepareForReuse() {
         self.route = nil
-        self.segmentsCollectionView.delegate = nil
+        self.segmentsCollectionView.dataSource = nil
         self.segmentsCollectionView.delegate = nil
     }
     
@@ -81,16 +81,13 @@ class RouteCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDe
         return cell
     }
     
-    /* Workaround to solve the "invisible" SVG problem */
+    /* Workaround to solve the "invisible" SVG problem, memory leak in the UIWebView */
     func webViewDidFinishLoad(webView: UIWebView) {
         webView.delegate = nil
         
         webView.backgroundColor = UIColor.clearColor()
         webView.opaque = false
         webView.scrollView.scrollEnabled = false
-        
-        let script = "var svgElement = document.getElementById('Layer_1');svgElement.style.stroke = \"#474a51\";svgElement.style.strokeWidth = 2.5;"
-        webView.stringByEvaluatingJavaScriptFromString(script)
         
         let contentSize = webView.scrollView.contentSize
         let webViewsize = webView.bounds.size

@@ -31,7 +31,6 @@ class RouteDetailInterfaceController: WKInterfaceController {
         self.arrivalTime.setText(route.getArrivelTime()?.hoursAndMinuts())
         self.providerLabel.setText(route.provider)
         
-        
         let numberOfSegments = route.numberOfMoveSegments()
         
         self.tableView.setNumberOfRows(numberOfSegments, withRowType: "SegmentRow")
@@ -55,9 +54,7 @@ class RouteDetailInterfaceController: WKInterfaceController {
                 }
             }
         }
-        
     }
-
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user

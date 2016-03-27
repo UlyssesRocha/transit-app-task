@@ -7,10 +7,14 @@
 //
 
 import UIKit
+import WebKit
 
 class SegmentCell: UICollectionViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var segmentImage: UIWebView!
     
+    override func prepareForReuse() {
+        self.segmentImage.loadHTMLString("", baseURL: nil)
+    }
 }

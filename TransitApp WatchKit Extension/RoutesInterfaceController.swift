@@ -33,12 +33,10 @@ class RoutesInterfaceController: WKInterfaceController {
         
     }
 
-    
     override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
         let context = routes![rowIndex]
         self.pushControllerWithName("RouteDetail", context:context)
     }
-
 
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
