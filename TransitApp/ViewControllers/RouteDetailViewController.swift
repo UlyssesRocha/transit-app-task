@@ -10,20 +10,21 @@ import UIKit
 import GoogleMaps
 
 class RouteDetailViewController: UITableViewController {
-
-    weak var route:Route?
     
     @IBOutlet weak var mapView: GMSMapView!
     
     private weak var provider:Provider?
     private var properties:NSDictionary?
+    
     let sectionHeaderTitles = ["Information","Route","Details"]
+    
+    weak var route:Route?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.loadMapInfo()
         self.properties = self.route?.getProperties()
+        self.loadMapInfo()
      }
     
     
@@ -87,9 +88,10 @@ class RouteDetailViewController: UITableViewController {
            return segmentCellForRowAtIndexPath(indexPath)
         }
         
-        //Is there some properties to present?
+        //properties to present?
         return propertiesCellForRowAtIndexPath(indexPath)
     }
+    
     
 //MARK: Private Functions
     private func placePin(name:String,position:CLLocationCoordinate2D, color:UIColor){

@@ -14,6 +14,8 @@ struct Constants {
     static let longitude = 13.403356
     static let origin = "Torstraße 103, 10119 Berlin, Deutschland"
     static let destination = "Leipziger Platz 7, 10117 Berlin, Deutschland"
+    static let destLatitude = 52.509071
+    static let destLongitude = 13.377977
     static let date = "2015-04-17T13:20:00+02:00"
     static let timezone = "GMT+02:00"
 }

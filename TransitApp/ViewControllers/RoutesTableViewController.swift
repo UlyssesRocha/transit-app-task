@@ -21,6 +21,7 @@ class RoutesTableViewController: UITableViewController {
             if error != nil{
                 return
             }
+            
             self?.routes = routes
             self?.providers = providers
             self?.tableView.reloadData()
@@ -44,8 +45,6 @@ class RoutesTableViewController: UITableViewController {
         
         cell.load(routes![indexPath.row])
         
-        cell.contentView.layer.cornerRadius = 5
-        cell.contentView.layer.masksToBounds = true
         return cell
     }
     
@@ -53,7 +52,6 @@ class RoutesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         performSegueWithIdentifier("showDetail", sender: self.routes![indexPath.row])
     }
-
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {

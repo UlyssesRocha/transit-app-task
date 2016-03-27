@@ -17,18 +17,7 @@ public class Route: NSObject {
         case public_transport, car_sharing, private_bike , bike_sharing , taxi
         
         func getName() -> String {
-            switch self {
-            case .public_transport:
-                return "Public Transport"
-            case .car_sharing:
-                return "Car Sharing"
-            case .private_bike:
-                return "Private Bike"
-            case .bike_sharing:
-                return "Bike Sharing"
-            case .taxi:
-                return "Taxi"
-            }
+            return self.rawValue.stringByReplacingOccurrencesOfString("_", withString: " ").capitalizedString
         }
     }
 
@@ -95,6 +84,7 @@ public class Route: NSObject {
         if self.properties == nil {
             return nil
         }
+        
         let elementProperties:NSMutableDictionary = NSMutableDictionary()
         //Taxi Special case
         if self.type == .taxi{

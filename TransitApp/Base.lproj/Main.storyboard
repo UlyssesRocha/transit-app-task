@@ -35,16 +35,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Leipziger Platz 7, 10117 Berlin, Deutschland" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UAf-ha-yUN">
-                                <rect key="frame" x="20" y="133" width="480" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Leipziger Platz 7, 10117 Berlin, Deutschland" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UAf-ha-yUN">
+                                <rect key="frame" x="20" y="133" width="299" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="g0j-GX-HVZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="13:20:00" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tiM-70-mkw">
-                                <rect key="frame" x="20" y="183" width="480" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="13:20:00" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tiM-70-mkw">
+                                <rect key="frame" x="20" y="183" width="299" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6XO-gT-0dL"/>
                                 </constraints>
@@ -62,8 +62,8 @@
                                     <segue destination="Dgn-LV-7tZ" kind="show" id="CE6-Pk-6ih"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Torstraße 103, 10119 Berlin, Deutschland" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="egI-ds-ESQ">
-                                <rect key="frame" x="20" y="84" width="480" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Torstraße 103, 10119 Berlin, Deutschland" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="egI-ds-ESQ">
+                                <rect key="frame" x="20" y="84" width="299" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="GvH-Bs-7Tb"/>
                                 </constraints>
@@ -270,7 +270,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tf1-tc-321" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1409" y="384"/>
+            <point key="canvasLocation" x="1327" y="401"/>
         </scene>
         <!--Route Detail View Controller-->
         <scene sceneID="fqY-iK-Va5">
@@ -349,14 +349,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I95-1d-y3e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2061" y="384.99999999999994"/>
-        </scene>
-        <!--Page View Controller-->
-        <scene sceneID="bZH-JP-iyl">
-            <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="CvN-le-Jtn" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vQ7-h7-xPY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
+            <point key="canvasLocation" x="2089" y="401"/>
         </scene>
     </scenes>
 </document>

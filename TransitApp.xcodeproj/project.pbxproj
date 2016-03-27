@@ -270,10 +270,9 @@
 		B1E1161C1CA6FDE000580BE1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B1E1163E1CA8962A00580BE1 /* Cells */,
 				B1BABC591CA5606C00EDB17D /* SearchViewController.swift */,
 				B1E1161F1CA6FE6600580BE1 /* RoutesTableViewController.swift */,
-				B1E116211CA7024400580BE1 /* RouteCell.swift */,
-				B1E116251CA73EE600580BE1 /* SegmentCell.swift */,
 				B1E116271CA77D8D00580BE1 /* RouteDetailViewController.swift */,
 			);
 			name = ViewControllers;
@@ -296,6 +295,15 @@
 				B1BABC7A1CA5606C00EDB17D /* RoutesInterfaceController.swift */,
 			);
 			name = InterfaceControllers;
+			sourceTree = "<group>";
+		};
+		B1E1163E1CA8962A00580BE1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B1E116211CA7024400580BE1 /* RouteCell.swift */,
+				B1E116251CA73EE600580BE1 /* SegmentCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

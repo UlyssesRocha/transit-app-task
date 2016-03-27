@@ -22,17 +22,17 @@ class Provider: NSObject {
         self.disclaimer = dataDictionary["disclaimer"] as? String
         self.displayName = dataDictionary["display_name"] as? String
         
-        if let iconUrl = dataDictionary["provider_icon_url"] as? String{
-            self.providerIconUrl = NSURL(string: iconUrl)
-        }
-        
-        if let itunesUrl = dataDictionary["ios_itunes_url"] as? String{
-            self.iosItunesUrl = NSURL(string: itunesUrl)
-        }
-
-        if let iosUrl = dataDictionary["ios_app_url"] as? String{
-            self.iosAppUrl = NSURL(string: iosUrl)
-        }
+//        if let iconUrl = dataDictionary["provider_icon_url"] as? String{
+//            self.providerIconUrl = NSURL(string: iconUrl)
+//        }
+//        
+//        if let itunesUrl = dataDictionary["ios_itunes_url"] as? String{
+//            self.iosItunesUrl = NSURL(string: itunesUrl)
+//        }
+//
+//        if let iosUrl = dataDictionary["ios_app_url"] as? String{
+//            self.iosAppUrl = NSURL(string: iosUrl)
+//        }
 
     }
     

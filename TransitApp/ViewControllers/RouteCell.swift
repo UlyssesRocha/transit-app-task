@@ -22,19 +22,7 @@ class RouteCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDe
 
     private weak var route:Route?
     
-    override func prepareForReuse() {
-        self.segmentsCollectionView.delegate = nil
-        self.segmentsCollectionView.delegate = nil
-    }
-    
-    override func drawRect(rect: CGRect) {
-        let origin = rect.origin
-        let size = CGSize(width: rect.size.width, height: rect.size.height-10)
-        
-        self.layer.cornerRadius = 30.0
-        self.clipsToBounds = true
-        self.layer.masksToBounds = true
-    }
+
     func load(route:Route){
         self.route = route
 
@@ -55,9 +43,19 @@ class RouteCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDe
         segmentsCollectionView.dataSource = self
         segmentsCollectionView.delegate = self
         segmentsCollectionView.reloadData()
-        
     }
     
+    override func prepareForReuse() {
+        self.route = nil
+        self.segmentsCollectionView.delegate = nil
+        self.segmentsCollectionView.delegate = nil
+    }
+    
+    override func drawRect(rect: CGRect) {
+        self.layer.cornerRadius = 30.0
+        self.clipsToBounds = true
+        self.layer.masksToBounds = true
+    }
     
 //MARK : Segments CollectionView
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -66,7 +64,6 @@ class RouteCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDe
         }
         return route!.numberOfMoveSegments()
     }
-    
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
