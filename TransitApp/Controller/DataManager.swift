@@ -14,8 +14,6 @@ class DataManager: NSObject {
     
     func loadRoutes(origin:String, destination:String, atTime time:NSDate?, completionHandler:(routes:[Route]?,providers:[Provider]?, error:NSError?)->()){
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-            
             ConnectionManager.sharedInstance.consultServerFor(origin, destination: destination, time: time, sucess: { (resultDictionary) in
                 
                 if let routesDictionary = resultDictionary["routes"], providersDictionary = resultDictionary["provider_attributes"]{
@@ -42,7 +40,6 @@ class DataManager: NSObject {
             }) { (error) in
                 completionHandler(routes: nil,providers: nil,error: error)
             }
-        }
     }
     
 }

@@ -1,15 +1,239 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6221" systemVersion="13E28" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1d8-8l-vDj">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="RobotoCondensed-Regular.ttf">
+            <string>RobotoCondensed-Regular</string>
+            <string>RobotoCondensed-Regular</string>
+            <string>RobotoCondensed-Regular</string>
+            <string>RobotoCondensed-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="TransitApp_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" id="0Yg-HF-Qec">
+                            <items>
+                                <label alignment="left" text="Origin" id="agT-rY-cU1">
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                </label>
+                            </items>
+                        </group>
+                        <label alignment="left" text="Torstraße 103, 10119 Berlin" id="vOB-Tj-kKt">
+                            <fontDescription key="font" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="12"/>
+                        </label>
+                        <group width="1" alignment="left" id="RXf-PB-Cpi">
+                            <items>
+                                <label alignment="left" text="Destination" id="585-VJ-maQ">
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                </label>
+                            </items>
+                        </group>
+                        <label alignment="left" text="Leipziger Platz 7, 10117 Berlin" id="oGI-v3-dmV">
+                            <fontDescription key="font" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="11"/>
+                        </label>
+                        <group width="1" alignment="left" id="Mx5-Hv-zMH">
+                            <items>
+                                <button width="1" alignment="left" title="Go" id="Sw7-aR-W43">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
             </objects>
+            <point key="canvasLocation" x="-31" y="419"/>
+        </scene>
+        <!--Routes-->
+        <scene sceneID="IDR-aU-3fZ">
+            <objects>
+                <controller identifier="Routes" title="Routes" id="1d8-8l-vDj" customClass="RoutesInterfaceController" customModule="TransitApp_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" id="Y9c-Oq-j8f">
+                            <items>
+                                <tableRow identifier="RouteRow" id="dPl-VY-WN2" customClass="RouteRow" customModule="TransitApp_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="gPO-we-lc9">
+                                        <items>
+                                            <group width="1" alignment="left" spacing="5" id="Z24-OK-CG6">
+                                                <items>
+                                                    <label alignment="left" verticalAlignment="center" text="Name" id="ozk-MZ-RjV">
+                                                        <fontDescription key="font" type="system" pointSize="14"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <separator alignment="left" alpha="0.29999999999999999" id="qIb-EM-4Bj"/>
+                                            <group width="1" height="36.5" alignment="left" layout="vertical" id="Ewy-wb-MP5">
+                                                <items>
+                                                    <group width="1" alignment="left" id="UM0-ol-2uM">
+                                                        <items>
+                                                            <label alignment="left" verticalAlignment="center" text="000 EUR" numberOfLines="2" id="gNM-i1-opO">
+                                                                <fontDescription key="font" type="system" pointSize="11"/>
+                                                            </label>
+                                                            <label alignment="right" text="Label" textAlignment="right" id="MIh-Yt-kI8">
+                                                                <fontDescription key="font" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="13"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                    <group width="1" alignment="left" id="n8q-lP-Wcw">
+                                                        <items>
+                                                            <label alignment="left" verticalAlignment="center" text="Arrival" textAlignment="left" numberOfLines="2" id="U2H-md-8kr">
+                                                                <fontDescription key="font" type="system" pointSize="13"/>
+                                                            </label>
+                                                            <label alignment="right" verticalAlignment="center" text="Time" textAlignment="right" id="ipC-Yp-AFp">
+                                                                <fontDescription key="font" type="system" pointSize="14"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                </items>
+                                            </group>
+                                        </items>
+                                        <edgeInsets key="margins" left="8" right="8" top="10" bottom="5"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="arrivalTime" destination="ipC-Yp-AFp" id="TaM-Uq-w4Z"/>
+                                        <outlet property="nameLabel" destination="ozk-MZ-RjV" id="67F-KF-96a"/>
+                                        <outlet property="priceLabel" destination="gNM-i1-opO" id="ZcA-d4-Tcc"/>
+                                        <outlet property="providerLabel" destination="MIh-Yt-kI8" id="ddC-Je-9xj"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="tableView" destination="Y9c-Oq-j8f" id="BhO-FR-Rmn"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="194" y="406"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="blK-NY-1Ui">
+            <objects>
+                <controller identifier="RouteDetail" title="Details" id="Z6R-al-Nf4" customClass="RouteDetailInterfaceController" customModule="TransitApp_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="0.0" alignment="left" layout="vertical" id="DGJ-Xg-0aO">
+                            <items>
+                                <group width="1" alignment="left" spacing="5" id="BFW-cE-zlL">
+                                    <items>
+                                        <label alignment="left" verticalAlignment="center" text="Name" id="XHe-Gg-Hfl">
+                                            <fontDescription key="font" type="system" pointSize="14"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <separator alignment="left" alpha="0.29999999999999999" id="AkQ-dr-g9S"/>
+                                <group width="1" height="44.5" alignment="left" layout="vertical" id="sa2-Vm-j3E">
+                                    <items>
+                                        <group width="1" alignment="left" id="qGq-Pa-ejM">
+                                            <items>
+                                                <label alignment="left" verticalAlignment="center" text="000 EUR" numberOfLines="2" id="fjm-IF-nik">
+                                                    <fontDescription key="font" type="system" pointSize="11"/>
+                                                </label>
+                                                <label alignment="right" text="Label" textAlignment="right" id="MQ6-ug-1BY">
+                                                    <fontDescription key="font" name="RobotoCondensed-Regular" family="Roboto Condensed" pointSize="13"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                        <group width="1" alignment="left" id="ZnL-U4-N8K">
+                                            <items>
+                                                <label alignment="left" verticalAlignment="center" text="Arrival" textAlignment="left" numberOfLines="2" id="lF0-Mk-pik">
+                                                    <fontDescription key="font" type="system" pointSize="13"/>
+                                                </label>
+                                                <label alignment="right" verticalAlignment="center" text="Time" textAlignment="right" id="xUq-yL-qho">
+                                                    <fontDescription key="font" type="system" pointSize="14"/>
+                                                </label>
+                                            </items>
+                                        </group>
+                                    </items>
+                                </group>
+                                <separator alignment="left" id="mha-Hd-SRo"/>
+                            </items>
+                            <edgeInsets key="margins" left="8" right="8" top="10" bottom="5"/>
+                        </group>
+                        <table alignment="left" id="8I5-5g-ZEO">
+                            <items>
+                                <tableRow identifier="SegmentRow" selectable="NO" id="U5A-Kh-uo7" customClass="SegmentRow" customModule="TransitApp_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="NdL-UQ-mro">
+                                        <items>
+                                            <group width="1" alignment="left" spacing="5" id="Gpf-ky-9AH">
+                                                <items>
+                                                    <label width="1" alignment="left" verticalAlignment="center" text="Name" numberOfLines="2" id="XEc-9g-Qsf">
+                                                        <fontDescription key="font" type="system" pointSize="19"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <separator alignment="left" alpha="0.29999999999999999" id="L7E-wm-7bn"/>
+                                            <group width="1" alignment="left" layout="vertical" id="fol-Uf-6n2">
+                                                <items>
+                                                    <group width="1" alignment="left" id="oAT-Dh-jUk">
+                                                        <items>
+                                                            <label alignment="right" verticalAlignment="center" text="Time" textAlignment="right" id="AdL-Y7-bbM">
+                                                                <fontDescription key="font" type="system" pointSize="14"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                    <label width="1" alignment="left" verticalAlignment="center" text="Address" textAlignment="left" numberOfLines="3" id="kBW-mz-pr2">
+                                                        <fontDescription key="font" type="system" pointSize="13"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                        </items>
+                                        <edgeInsets key="margins" left="8" right="8" top="10" bottom="5"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="addressLabel" destination="kBW-mz-pr2" id="RkX-hT-o4y"/>
+                                        <outlet property="nameLabel" destination="XEc-9g-Qsf" id="iKw-xf-ZdI"/>
+                                        <outlet property="startTimeLabel" destination="AdL-Y7-bbM" id="icm-6g-JHw"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                        <table alignment="left" id="56y-7n-jKY">
+                            <items>
+                                <tableRow identifier="DetailRow" id="hcx-BC-aIV" customClass="DetailRow" customModule="TransitApp_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="52.5" alignment="left" id="G0T-xi-E35">
+                                        <items>
+                                            <group width="1" height="47.5" alignment="left" layout="vertical" id="rCA-VO-O0M">
+                                                <items>
+                                                    <group width="1" alignment="left" id="zGi-ml-Ulo">
+                                                        <items>
+                                                            <label width="124" alignment="right" verticalAlignment="center" text="Info" textAlignment="left" id="iXs-nr-TP5">
+                                                                <fontDescription key="font" type="system" pointSize="14"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                    <label width="1" height="21" alignment="left" verticalAlignment="center" text="Detail" textAlignment="left" numberOfLines="3" id="J84-Xy-Zjt">
+                                                        <fontDescription key="font" type="system" pointSize="13"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                        </items>
+                                        <color key="backgroundColor" red="0.098039215690000001" green="0.30196078430000001" blue="0.55294117649999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="detailLabel" destination="J84-Xy-Zjt" id="Lah-8N-czY"/>
+                                        <outlet property="infoLabel" destination="iXs-nr-TP5" id="She-Va-UQc"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="DetailTableView" destination="56y-7n-jKY" id="pjw-xq-IRt"/>
+                        <outlet property="arrivalTime" destination="xUq-yL-qho" id="Phz-g3-Jee"/>
+                        <outlet property="nameLabel" destination="XHe-Gg-Hfl" id="Xx0-KS-WfY"/>
+                        <outlet property="priceLabel" destination="fjm-IF-nik" id="K1a-Kb-5uj"/>
+                        <outlet property="providerLabel" destination="MQ6-ug-1BY" id="8m7-Zt-CFY"/>
+                        <outlet property="tableView" destination="8I5-5g-ZEO" id="sDp-Go-ebp"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="470" y="438"/>
         </scene>
     </scenes>
 </document>

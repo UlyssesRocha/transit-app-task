@@ -16,7 +16,6 @@ class ConnectionManager: NSObject {
     
     //MockData
     func consultServerFor(origin:String = "", destination:String = "", time:NSDate? = nil, sucess:([String: AnyObject])->(), fail:(NSError?)->()){
-        
             self.retrieveDataFromFile({ (jsonData) in
                 /* Parse JSON*/
                 do{

@@ -62,6 +62,7 @@ public class Route: NSObject {
             }
         }
     }
+    
     func getPrice()->String?{
         if let price = self.amount{
             return String(price)+" "+String(self.currency!.currencySymbol())

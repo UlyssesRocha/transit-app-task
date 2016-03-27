@@ -20,7 +20,7 @@
 		B1BABC6D1CA5606C00EDB17D /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1BABC6B1CA5606C00EDB17D /* Interface.storyboard */; };
 		B1BABC6F1CA5606C00EDB17D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1BABC6E1CA5606C00EDB17D /* Assets.xcassets */; };
 		B1BABC761CA5606C00EDB17D /* TransitApp WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B1BABC751CA5606C00EDB17D /* TransitApp WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		B1BABC7B1CA5606C00EDB17D /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BABC7A1CA5606C00EDB17D /* InterfaceController.swift */; };
+		B1BABC7B1CA5606C00EDB17D /* RoutesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BABC7A1CA5606C00EDB17D /* RoutesInterfaceController.swift */; };
 		B1BABC7D1CA5606C00EDB17D /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BABC7C1CA5606C00EDB17D /* ExtensionDelegate.swift */; };
 		B1BABC7F1CA5606C00EDB17D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B1BABC7E1CA5606C00EDB17D /* Assets.xcassets */; };
 		B1D349461CA5CD1E00DCEF5E /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D349451CA5CD1E00DCEF5E /* Stop.swift */; };
@@ -34,6 +34,20 @@
 		B1E116241CA7061D00580BE1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E116231CA7061D00580BE1 /* Extensions.swift */; };
 		B1E116261CA73EE600580BE1 /* SegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E116251CA73EE600580BE1 /* SegmentCell.swift */; };
 		B1E116281CA77D8D00580BE1 /* RouteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E116271CA77D8D00580BE1 /* RouteDetailViewController.swift */; };
+		B1E116291CA81F1400580BE1 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = B103983F1CA5B97F0021D093 /* Route.swift */; };
+		B1E1162A1CA81F1700580BE1 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10398411CA5BAF70021D093 /* Segment.swift */; };
+		B1E1162B1CA81F1900580BE1 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D349451CA5CD1E00DCEF5E /* Stop.swift */; };
+		B1E1162C1CA81F1E00580BE1 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3494A1CA5DD0000DCEF5E /* Provider.swift */; };
+		B1E1162D1CA81F2300580BE1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E1161A1CA6F07400580BE1 /* Constants.swift */; };
+		B1E1162E1CA81F2800580BE1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E116231CA7061D00580BE1 /* Extensions.swift */; };
+		B1E1162F1CA81F3000580BE1 /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D349481CA5D8D600DCEF5E /* ConnectionManager.swift */; };
+		B1E116301CA81F3400580BE1 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3494C1CA5E75A00DCEF5E /* LocationManager.swift */; };
+		B1E116311CA81F3600580BE1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3494E1CA5E87200DCEF5E /* DataManager.swift */; };
+		B1E116331CA828B800580BE1 /* RouteRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E116321CA828B800580BE1 /* RouteRow.swift */; };
+		B1E116341CA82BC700580BE1 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = B103983C1CA5B9590021D093 /* data.json */; };
+		B1E116371CA871C100580BE1 /* SegmentRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E116361CA871C100580BE1 /* SegmentRow.swift */; };
+		B1E116391CA871D300580BE1 /* RouteDetailInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E116381CA871D300580BE1 /* RouteDetailInterfaceController.swift */; };
+		B1E1163C1CA8738D00580BE1 /* DetailRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E1163B1CA8738D00580BE1 /* DetailRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,7 +111,7 @@
 		B1BABC6E1CA5606C00EDB17D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1BABC701CA5606C00EDB17D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1BABC751CA5606C00EDB17D /* TransitApp WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TransitApp WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1BABC7A1CA5606C00EDB17D /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		B1BABC7A1CA5606C00EDB17D /* RoutesInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutesInterfaceController.swift; sourceTree = "<group>"; };
 		B1BABC7C1CA5606C00EDB17D /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		B1BABC7E1CA5606C00EDB17D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B1BABC801CA5606C00EDB17D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -112,6 +126,10 @@
 		B1E116231CA7061D00580BE1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Util/Extensions.swift; sourceTree = "<group>"; };
 		B1E116251CA73EE600580BE1 /* SegmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegmentCell.swift; path = ViewControllers/SegmentCell.swift; sourceTree = "<group>"; };
 		B1E116271CA77D8D00580BE1 /* RouteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteDetailViewController.swift; path = ViewControllers/RouteDetailViewController.swift; sourceTree = "<group>"; };
+		B1E116321CA828B800580BE1 /* RouteRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteRow.swift; sourceTree = "<group>"; };
+		B1E116361CA871C100580BE1 /* SegmentRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentRow.swift; sourceTree = "<group>"; };
+		B1E116381CA871D300580BE1 /* RouteDetailInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteDetailInterfaceController.swift; sourceTree = "<group>"; };
+		B1E1163B1CA8738D00580BE1 /* DetailRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,10 +239,12 @@
 		B1BABC791CA5606C00EDB17D /* TransitApp WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				B1BABC7A1CA5606C00EDB17D /* InterfaceController.swift */,
+				B1E1163A1CA8737000580BE1 /* Rows */,
+				B1BABC7A1CA5606C00EDB17D /* RoutesInterfaceController.swift */,
 				B1BABC7C1CA5606C00EDB17D /* ExtensionDelegate.swift */,
 				B1BABC7E1CA5606C00EDB17D /* Assets.xcassets */,
 				B1BABC801CA5606C00EDB17D /* Info.plist */,
+				B1E116381CA871D300580BE1 /* RouteDetailInterfaceController.swift */,
 			);
 			path = "TransitApp WatchKit Extension";
 			sourceTree = "<group>";
@@ -258,6 +278,16 @@
 				B1E116271CA77D8D00580BE1 /* RouteDetailViewController.swift */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B1E1163A1CA8737000580BE1 /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				B1E116321CA828B800580BE1 /* RouteRow.swift */,
+				B1E116361CA871C100580BE1 /* SegmentRow.swift */,
+				B1E1163B1CA8738D00580BE1 /* DetailRow.swift */,
+			);
+			name = Rows;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1BABC7F1CA5606C00EDB17D /* Assets.xcassets in Resources */,
+				B1E116341CA82BC700580BE1 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,8 +497,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1E116391CA871D300580BE1 /* RouteDetailInterfaceController.swift in Sources */,
+				B1E116331CA828B800580BE1 /* RouteRow.swift in Sources */,
+				B1E116291CA81F1400580BE1 /* Route.swift in Sources */,
+				B1E116371CA871C100580BE1 /* SegmentRow.swift in Sources */,
 				B1BABC7D1CA5606C00EDB17D /* ExtensionDelegate.swift in Sources */,
-				B1BABC7B1CA5606C00EDB17D /* InterfaceController.swift in Sources */,
+				B1E116301CA81F3400580BE1 /* LocationManager.swift in Sources */,
+				B1E1162B1CA81F1900580BE1 /* Stop.swift in Sources */,
+				B1E1162E1CA81F2800580BE1 /* Extensions.swift in Sources */,
+				B1E1162F1CA81F3000580BE1 /* ConnectionManager.swift in Sources */,
+				B1BABC7B1CA5606C00EDB17D /* RoutesInterfaceController.swift in Sources */,
+				B1E1162D1CA81F2300580BE1 /* Constants.swift in Sources */,
+				B1E116311CA81F3600580BE1 /* DataManager.swift in Sources */,
+				B1E1162C1CA81F1E00580BE1 /* Provider.swift in Sources */,
+				B1E1162A1CA81F1700580BE1 /* Segment.swift in Sources */,
+				B1E1163C1CA8738D00580BE1 /* DetailRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

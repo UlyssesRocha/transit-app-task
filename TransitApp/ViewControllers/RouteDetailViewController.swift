@@ -57,7 +57,7 @@ class RouteDetailViewController: UITableViewController {
                 let polylinePath = GMSPath(fromEncodedPath: polylineString)
                 let polyline = GMSPolyline(path: polylinePath)
                 polyline.map = mapView
-                polyline.strokeColor = UIColor(CIColor: segment.color!)
+                polyline.strokeColor = UIColor.blueColor()
             }
         }
 

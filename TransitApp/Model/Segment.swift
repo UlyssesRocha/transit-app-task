@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 import CoreLocation
 
 public class Segment: NSObject {
@@ -19,8 +20,7 @@ public class Segment: NSObject {
     let name:String?
     private let numStops:Int
     let travelMode:Mode
-    private let segmentDescription: String?
-    let color:CIColor?
+    let segmentDescription: String?
     
     var iconImage:UIImage?
     let iconUrl:String
@@ -36,10 +36,7 @@ public class Segment: NSObject {
         self.travelMode = Mode(rawValue: modeString)!
         
         self.segmentDescription = dataDictionary["description"] as? String
-        
-        let hexColor = dataDictionary["color"] as! String
-        self.color = CIColor(string: hexColor)
-        
+                
         self.iconImage = nil
         
         self.iconUrl = dataDictionary["icon_url"] as! String
