@@ -26,15 +26,13 @@ public class Route: NSObject {
                 return "Bike Sharing"
             case .taxi:
                 return "Taxi"
-            default:
-                return ""
             }
         }
     }
 
     let type:Type
     let provider:String
-    var segments:[Segment] = []
+    private var segments:[Segment] = []
     let properties:[String: AnyObject]?
     let currency:String?
     let amount:Double?
@@ -62,9 +60,40 @@ public class Route: NSObject {
             }
         }
     }
+
+    func getMoveSegment(id:Int)->Segment?{
+        let moveSegments = self.segments.filter { (segment) -> Bool in
+            segment.isMoveSegment()
+        }
+        
+        if (id >= 0 && id < moveSegments.count){
+            return moveSegments[id]
+        }
+        return nil
+    }
     
+    func numberOfMoveSegments()->Int{
+        var count = 0
+        for i in self.segments{
+            if i.isMoveSegment(){
+                count += 1
+            }
+        }
+        return count
+    }
+    
+    func getTravelTime()->NSTimeInterval{
+      return self.getArrivelTime()!.timeIntervalSinceDate(getStartTime()!)
+    }
+    
+    func getStartTime()->NSDate?{
+        return self.segments.first?.getStartTime()
+    }
+
     func getArrivelTime()->NSDate?{
        return self.segments.last?.getArrivalTime()
     }
+    
+ 
     
 }

@@ -12,10 +12,10 @@ public class Segment: NSObject {
     
     //Segments
     public enum Mode:String{
-        case walking, subway, bus, driving, cycling,  setup, parking, change
+        case walking, subway, bus, driving, cycling, setup, parking, change
     }
 
-    private let name:String?
+    let name:String?
     private let numStops:Int
 
     private let travelMode:Mode
@@ -23,8 +23,8 @@ public class Segment: NSObject {
     private let segmentDescription: String?
     private let color:CIColor?
     
-    private var iconImage:UIImage?
-    private let iconUrl:NSURL
+    var iconImage:UIImage?
+    let iconUrl:String
     private let polyline:String?
     
     private var stops:[Stop] = []
@@ -43,8 +43,7 @@ public class Segment: NSObject {
         
         self.iconImage = nil
         
-        let urlString = dataDictionary["icon_url"] as! String
-        self.iconUrl = NSURL(fileURLWithPath: urlString)
+        self.iconUrl = dataDictionary["icon_url"] as! String
         self.polyline = dataDictionary["polyline"] as? String
         
         if let stopDictionary = dataDictionary["stops"]{
@@ -53,6 +52,17 @@ public class Segment: NSObject {
                 self.stops.append(stopPoint)
             }
         }
+    }
+    
+    func isMoveSegment()->Bool{
+        if self.travelMode.hashValue > 4{
+            return false
+        }
+        return true
+    }
+        
+    func getStartTime()->NSDate?{
+        return self.stops.first?.datetime
     }
     
     func getArrivalTime()->NSDate?{

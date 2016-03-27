@@ -30,8 +30,9 @@
 		B1D3494F1CA5E87200DCEF5E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3494E1CA5E87200DCEF5E /* DataManager.swift */; };
 		B1E1161B1CA6F07400580BE1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E1161A1CA6F07400580BE1 /* Constants.swift */; };
 		B1E116201CA6FE6600580BE1 /* RoutesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E1161F1CA6FE6600580BE1 /* RoutesTableViewController.swift */; };
-		B1E116221CA7024400580BE1 /* RouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E116211CA7024400580BE1 /* RouteTableViewCell.swift */; };
+		B1E116221CA7024400580BE1 /* RouteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E116211CA7024400580BE1 /* RouteCell.swift */; };
 		B1E116241CA7061D00580BE1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E116231CA7061D00580BE1 /* Extensions.swift */; };
+		B1E116261CA73EE600580BE1 /* SegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E116251CA73EE600580BE1 /* SegmentCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,8 +107,9 @@
 		B1D3494E1CA5E87200DCEF5E /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = Controller/DataManager.swift; sourceTree = "<group>"; };
 		B1E1161A1CA6F07400580BE1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B1E1161F1CA6FE6600580BE1 /* RoutesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoutesTableViewController.swift; path = ViewControllers/RoutesTableViewController.swift; sourceTree = "<group>"; };
-		B1E116211CA7024400580BE1 /* RouteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteTableViewCell.swift; path = ViewControllers/RouteTableViewCell.swift; sourceTree = "<group>"; };
+		B1E116211CA7024400580BE1 /* RouteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteCell.swift; path = ViewControllers/RouteCell.swift; sourceTree = "<group>"; };
 		B1E116231CA7061D00580BE1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Util/Extensions.swift; sourceTree = "<group>"; };
+		B1E116251CA73EE600580BE1 /* SegmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegmentCell.swift; path = ViewControllers/SegmentCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,7 +251,8 @@
 			children = (
 				B1BABC591CA5606C00EDB17D /* SearchViewController.swift */,
 				B1E1161F1CA6FE6600580BE1 /* RoutesTableViewController.swift */,
-				B1E116211CA7024400580BE1 /* RouteTableViewCell.swift */,
+				B1E116211CA7024400580BE1 /* RouteCell.swift */,
+				B1E116251CA73EE600580BE1 /* SegmentCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -439,10 +442,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B10398401CA5B97F0021D093 /* Route.swift in Sources */,
-				B1E116221CA7024400580BE1 /* RouteTableViewCell.swift in Sources */,
+				B1E116221CA7024400580BE1 /* RouteCell.swift in Sources */,
 				B1D349491CA5D8D600DCEF5E /* ConnectionManager.swift in Sources */,
 				B1E116201CA6FE6600580BE1 /* RoutesTableViewController.swift in Sources */,
 				B1D3494B1CA5DD0000DCEF5E /* Provider.swift in Sources */,
+				B1E116261CA73EE600580BE1 /* SegmentCell.swift in Sources */,
 				B1BABC5A1CA5606C00EDB17D /* SearchViewController.swift in Sources */,
 				B1D3494D1CA5E75A00DCEF5E /* LocationManager.swift in Sources */,
 				B1E1161B1CA6F07400580BE1 /* Constants.swift in Sources */,

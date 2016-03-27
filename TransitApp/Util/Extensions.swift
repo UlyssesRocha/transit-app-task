@@ -40,6 +40,15 @@ extension NSDate {
         if secondsFrom(date) > 0 { return "\(secondsFrom(date))s" }
         return ""
     }
+    func hoursAndMinuts()->String{
+        
+
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        dateFormatter.timeZone = NSTimeZone(name: Constants.timezone)
+        
+        return dateFormatter.stringFromDate(self)
+    }
 }
 
 extension String {
