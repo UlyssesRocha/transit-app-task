@@ -64,12 +64,15 @@ class RouteDetailViewController: UITableViewController {
     }
       
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let titles = ["Information","Details","Route"]
+        let titles = ["Information","Route","Details"]
         return titles[section]
     }
     
     // MARK: - Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if self.properties == nil{
+            return 2
+        }
         return 3
     }
     
@@ -77,10 +80,11 @@ class RouteDetailViewController: UITableViewController {
         if section == 0{
             return 4
         }
-        if section == 1{
-            return self.properties?.count ?? 0
+        if section == 1 {
+            return self.route!.numberOfMoveSegments()
         }
-        return self.route!.numberOfMoveSegments()
+        
+        return self.properties?.count ?? 0
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -90,13 +94,13 @@ class RouteDetailViewController: UITableViewController {
            return infoCellForRowAtIndexPath(indexPath)
         }
         
-        //There is some properties to present?
-        if indexPath.section == 1 {
-           return propertiesCellForRowAtIndexPath(indexPath)
-        }
-
         //Present the Segment Details of the Trip
-        return segmentCellForRowAtIndexPath(indexPath)
+        if indexPath.section == 1 {
+           return segmentCellForRowAtIndexPath(indexPath)
+        }
+        
+        //Is there some properties to present?
+        return propertiesCellForRowAtIndexPath(indexPath)
     }
     
     func propertiesCellForRowAtIndexPath(indexPath:NSIndexPath)->UITableViewCell{
