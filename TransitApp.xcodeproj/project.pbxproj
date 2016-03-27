@@ -239,12 +239,11 @@
 		B1BABC791CA5606C00EDB17D /* TransitApp WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				B1E1163D1CA8855000580BE1 /* InterfaceControllers */,
 				B1E1163A1CA8737000580BE1 /* Rows */,
-				B1BABC7A1CA5606C00EDB17D /* RoutesInterfaceController.swift */,
 				B1BABC7C1CA5606C00EDB17D /* ExtensionDelegate.swift */,
 				B1BABC7E1CA5606C00EDB17D /* Assets.xcassets */,
 				B1BABC801CA5606C00EDB17D /* Info.plist */,
-				B1E116381CA871D300580BE1 /* RouteDetailInterfaceController.swift */,
 			);
 			path = "TransitApp WatchKit Extension";
 			sourceTree = "<group>";
@@ -288,6 +287,15 @@
 				B1E1163B1CA8738D00580BE1 /* DetailRow.swift */,
 			);
 			name = Rows;
+			sourceTree = "<group>";
+		};
+		B1E1163D1CA8855000580BE1 /* InterfaceControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B1E116381CA871D300580BE1 /* RouteDetailInterfaceController.swift */,
+				B1BABC7A1CA5606C00EDB17D /* RoutesInterfaceController.swift */,
+			);
+			name = InterfaceControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

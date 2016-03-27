@@ -17,6 +17,7 @@ class RouteDetailViewController: UITableViewController {
     
     private weak var provider:Provider?
     private var properties:NSDictionary?
+    let sectionHeaderTitles = ["Information","Route","Details"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,27 +31,16 @@ class RouteDetailViewController: UITableViewController {
         self.mapView.camera = GMSCameraPosition.cameraWithLatitude(self.route!.getStartPoint()!.latitude, longitude: self.route!.getStartPoint()!.longitude, zoom: 12)
         
         /*Place Marker in map*/
-        let originMarker = GMSMarker()
-        originMarker.icon = GMSMarker.markerImageWithColor(UIColor.grayColor())
-        originMarker.position = self.route!.getStartPoint()!
-        originMarker.title = "Origin"
-        originMarker.map = self.mapView
         
-        let destinationMarker = GMSMarker()
-        destinationMarker.icon = GMSMarker.markerImageWithColor(UIColor.blueColor())
-        destinationMarker.position = self.route!.getDestinationPoint()!
-        destinationMarker.title = "Destination"
-        destinationMarker.map = self.mapView
-        
+        self.placePin("Origin", position: self.route!.getStartPoint()!, color: UIColor.grayColor())
+        self.placePin("Destination", position: self.route!.getDestinationPoint()!, color: UIColor.blueColor())
+
         /* Draw Segments*/
         for segment in route!.segments{
+            
             //place a pin if is a "move" segment
             if segment.isMoveSegment(){
-                let destinationMarker = GMSMarker()
-                destinationMarker.icon = GMSMarker.markerImageWithColor(UIColor.redColor())
-                destinationMarker.position = segment.getStartPoint()!
-                destinationMarker.title = segment.name ?? segment.travelMode.rawValue.capitalizedString
-                destinationMarker.map = self.mapView
+                self.placePin(segment.name ?? segment.travelMode.rawValue.capitalizedString, position: segment.getStartPoint()!, color: UIColor.redColor())
             }
             
             if let polylineString = segment.polyline {
@@ -60,12 +50,10 @@ class RouteDetailViewController: UITableViewController {
                 polyline.strokeColor = UIColor.blueColor()
             }
         }
-
     }
       
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let titles = ["Information","Route","Details"]
-        return titles[section]
+        return sectionHeaderTitles[section]
     }
     
     // MARK: - Table view data source
@@ -103,7 +91,16 @@ class RouteDetailViewController: UITableViewController {
         return propertiesCellForRowAtIndexPath(indexPath)
     }
     
-    func propertiesCellForRowAtIndexPath(indexPath:NSIndexPath)->UITableViewCell{
+//MARK: Private Functions
+    private func placePin(name:String,position:CLLocationCoordinate2D, color:UIColor){
+        let destinationMarker = GMSMarker()
+        destinationMarker.icon = GMSMarker.markerImageWithColor(color)
+        destinationMarker.position = position
+        destinationMarker.title = name
+        destinationMarker.map = self.mapView
+    }
+    
+    private func propertiesCellForRowAtIndexPath(indexPath:NSIndexPath)->UITableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("info", forIndexPath: indexPath)
         
         let key = self.properties!.allKeys[indexPath.row] as! String
@@ -115,7 +112,7 @@ class RouteDetailViewController: UITableViewController {
         return cell
     }
     
-    func segmentCellForRowAtIndexPath(indexPath:NSIndexPath)->UITableViewCell{
+    private func segmentCellForRowAtIndexPath(indexPath:NSIndexPath)->UITableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("info", forIndexPath: indexPath)
         let segment = self.route!.getMoveSegment(indexPath.row)
         
@@ -126,7 +123,7 @@ class RouteDetailViewController: UITableViewController {
     }
 
     
-    func infoCellForRowAtIndexPath(indexPath:NSIndexPath)->UITableViewCell{
+    private func infoCellForRowAtIndexPath(indexPath:NSIndexPath)->UITableViewCell{
             let cell = tableView.dequeueReusableCellWithIdentifier("info", forIndexPath: indexPath)
             switch indexPath.row {
             case 0:

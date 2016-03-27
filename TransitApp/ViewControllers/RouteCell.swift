@@ -27,6 +27,14 @@ class RouteCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDe
         self.segmentsCollectionView.delegate = nil
     }
     
+    override func drawRect(rect: CGRect) {
+        let origin = rect.origin
+        let size = CGSize(width: rect.size.width, height: rect.size.height-10)
+        
+        self.layer.cornerRadius = 30.0
+        self.clipsToBounds = true
+        self.layer.masksToBounds = true
+    }
     func load(route:Route){
         self.route = route
 
@@ -47,6 +55,7 @@ class RouteCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDe
         segmentsCollectionView.dataSource = self
         segmentsCollectionView.delegate = self
         segmentsCollectionView.reloadData()
+        
     }
     
     

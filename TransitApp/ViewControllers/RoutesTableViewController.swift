@@ -43,6 +43,9 @@ class RoutesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("routeCell", forIndexPath: indexPath) as! RouteCell
         
         cell.load(routes![indexPath.row])
+        
+        cell.contentView.layer.cornerRadius = 5
+        cell.contentView.layer.masksToBounds = true
         return cell
     }
     

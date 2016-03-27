@@ -23,7 +23,7 @@ class SearchViewController: UIViewController {
         marker.icon = GMSMarker.markerImageWithColor(UIColor.blueColor())
         marker.position = LocationManager.sharedInstance.getCurrentUserLocation()
         marker.title = "My Location"
-        marker.map = self.map
+        marker.map = self.map        
     }
     
     override func didReceiveMemoryWarning() {
