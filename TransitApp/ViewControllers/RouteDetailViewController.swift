@@ -12,25 +12,26 @@ import GoogleMaps
 class RouteDetailViewController: UITableViewController {
 
     weak var route:Route?
-
+    
     @IBOutlet weak var mapView: GMSMapView!
     
     private weak var provider:Provider?
-    
-    /*
-     Info
-     Properties
-     SegmentDetails
-     */
+    private var properties:NSDictionary?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.loadMapInfo()
+        self.properties = self.route?.getProperties()
+     }
+    
+    
+    func loadMapInfo(){
         self.mapView.camera = GMSCameraPosition.cameraWithLatitude(self.route!.getStartPoint()!.latitude, longitude: self.route!.getStartPoint()!.longitude, zoom: 12)
         
         /*Place Marker in map*/
         let originMarker = GMSMarker()
-        originMarker.icon = GMSMarker.markerImageWithColor(UIColor.blueColor())
+        originMarker.icon = GMSMarker.markerImageWithColor(UIColor.grayColor())
         originMarker.position = self.route!.getStartPoint()!
         originMarker.title = "Origin"
         originMarker.map = self.mapView
@@ -43,6 +44,15 @@ class RouteDetailViewController: UITableViewController {
         
         /* Draw Segments*/
         for segment in route!.segments{
+            //place a pin if is a "move" segment
+            if segment.isMoveSegment(){
+                let destinationMarker = GMSMarker()
+                destinationMarker.icon = GMSMarker.markerImageWithColor(UIColor.redColor())
+                destinationMarker.position = segment.getStartPoint()!
+                destinationMarker.title = segment.name ?? segment.travelMode.rawValue.capitalizedString
+                destinationMarker.map = self.mapView
+            }
+            
             if let polylineString = segment.polyline {
                 let polylinePath = GMSPath(fromEncodedPath: polylineString)
                 let polyline = GMSPolyline(path: polylinePath)
@@ -50,31 +60,70 @@ class RouteDetailViewController: UITableViewController {
                 polyline.strokeColor = UIColor(CIColor: segment.color!)
             }
         }
-    }
-    
-    override func viewDidLayoutSubviews() {
-        
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    }
+      
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let titles = ["Information","Details","Route"]
+        return titles[section]
     }
     
     // MARK: - Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 3
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        if section == 0{
+            return 4
+        }
+        if section == 1{
+            return self.properties?.count ?? 0
+        }
+        return self.route!.numberOfMoveSegments()
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("info", forIndexPath: indexPath)
-
         //Load Info About the route
-        if indexPath.row < 4{
+        if indexPath.section == 0{
+           return infoCellForRowAtIndexPath(indexPath)
+        }
+        
+        //There is some properties to present?
+        if indexPath.section == 1 {
+           return propertiesCellForRowAtIndexPath(indexPath)
+        }
+
+        //Present the Segment Details of the Trip
+        return segmentCellForRowAtIndexPath(indexPath)
+    }
+    
+    func propertiesCellForRowAtIndexPath(indexPath:NSIndexPath)->UITableViewCell{
+        let cell = tableView.dequeueReusableCellWithIdentifier("info", forIndexPath: indexPath)
+        
+        let key = self.properties!.allKeys[indexPath.row] as! String
+        let data = self.properties![key] as? String
+
+        cell.textLabel!.text = key
+        cell.detailTextLabel!.text = data
+
+        return cell
+    }
+    
+    func segmentCellForRowAtIndexPath(indexPath:NSIndexPath)->UITableViewCell{
+        let cell = tableView.dequeueReusableCellWithIdentifier("info", forIndexPath: indexPath)
+        let segment = self.route!.getMoveSegment(indexPath.row)
+        
+        cell.textLabel!.text = segment!.name ?? segment!.travelMode.rawValue.capitalizedString
+        cell.detailTextLabel!.text = segment?.getStartTime()?.hoursAndMinuts()
+
+        return cell
+    }
+
+    
+    func infoCellForRowAtIndexPath(indexPath:NSIndexPath)->UITableViewCell{
+            let cell = tableView.dequeueReusableCellWithIdentifier("info", forIndexPath: indexPath)
             switch indexPath.row {
             case 0:
                 cell.textLabel!.text = "Type"
@@ -92,18 +141,9 @@ class RouteDetailViewController: UITableViewController {
                 }else{
                     cell.detailTextLabel!.text = "Unknown"
                 }
-            }
-            
         }
-        
-        //There is some properties to present?
-        
-        //Present the Segment Details of the Trip
-        
-        
-        return cell
+            return cell
     }
-    
    
    
 }

@@ -18,9 +18,7 @@ public class Segment: NSObject {
 
     let name:String?
     private let numStops:Int
-
-    private let travelMode:Mode
-    
+    let travelMode:Mode
     private let segmentDescription: String?
     let color:CIColor?
     

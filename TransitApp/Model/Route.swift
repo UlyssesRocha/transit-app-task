@@ -90,6 +90,31 @@ public class Route: NSObject {
         return count
     }
     
+    func getProperties()->NSDictionary?{
+        if self.properties == nil {
+            return nil
+        }
+        let elementProperties:NSMutableDictionary = NSMutableDictionary()
+        //Taxi Special case
+        if self.type == .taxi{
+            for item in self.properties!["companies"]!.allObjects{
+                let key = item["name"] as! String
+                let value = item["phone"] as? String
+                
+                elementProperties[key] = value!
+            }
+        }else{
+            for item in self.properties!{
+                let key = item.0.stringByReplacingOccurrencesOfString("_", withString: " ").capitalizedString
+                if let value = item.1 as? String{
+                    elementProperties[key] = value
+                }
+            }
+        }
+        return elementProperties
+    }
+    
+    
     func getTravelTime()->NSTimeInterval{
       return self.getArrivelTime()!.timeIntervalSinceDate(getStartTime()!)
     }

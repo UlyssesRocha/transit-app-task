@@ -21,7 +21,6 @@ class RoutesTableViewController: UITableViewController {
             if error != nil{
                 return
             }
-            
             self?.routes = routes
             self?.providers = providers
             self?.tableView.reloadData()
