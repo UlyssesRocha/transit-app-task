@@ -31,29 +31,6 @@ class ConnectionManager: NSObject {
         }
     }
     
-    func getDataFromUrl(url:NSURL, completionHandler:(data:NSData?,error:NSError?)->()){
-        
-        /*URL Settings*/
-        let session = NSURLSession.sharedSession()
-        let timeout = NSTimeInterval(10) // 10s
-        
-        let request = NSMutableURLRequest(URL: url, cachePolicy: .UseProtocolCachePolicy,timeoutInterval:timeout)
-        request.HTTPMethod = "GET"
-        
-        /*Executing Data Request*/
-        let task = session.dataTaskWithRequest(request) { (let data, let response, let error) in
-            
-            guard let _:NSData = data, let _:NSURLResponse = response  where error == nil else {
-                completionHandler(data: nil,error: error)
-                return
-            }
-            completionHandler(data: data, error: nil)
-        }
-        
-        task.resume()
-    }
-    
-    
     private func retrieveDataFromFile(sucess:(NSData)->(), fail:()->()){
         if let path = NSBundle.mainBundle().pathForResource("data", ofType: "json"){
             if let jsonData = NSData(contentsOfFile: path){

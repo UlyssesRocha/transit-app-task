@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import CoreLocation
+
 
 public class Route: NSObject {
     
@@ -32,7 +34,7 @@ public class Route: NSObject {
 
     let type:Type
     let provider:String
-    private var segments:[Segment] = []
+    var segments:[Segment] = []
     let properties:[String: AnyObject]?
     let currency:String?
     let amount:Double?
@@ -59,6 +61,12 @@ public class Route: NSObject {
                 self.segments.append(segmentObject)
             }
         }
+    }
+    func getPrice()->String?{
+        if let price = self.amount{
+            return String(price)+" "+String(self.currency!.currencySymbol())
+        }
+        return nil
     }
 
     func getMoveSegment(id:Int)->Segment?{
@@ -94,6 +102,12 @@ public class Route: NSObject {
        return self.segments.last?.getArrivalTime()
     }
     
- 
+    func getStartPoint()->CLLocationCoordinate2D?{
+        return self.segments.first?.getStartPoint()
+    }
+    
+    func getDestinationPoint()->CLLocationCoordinate2D?{
+        return self.segments.last?.getDestinationPoint()
+    }
     
 }

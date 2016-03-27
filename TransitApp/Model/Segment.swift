@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 public class Segment: NSObject {
     
@@ -21,11 +22,11 @@ public class Segment: NSObject {
     private let travelMode:Mode
     
     private let segmentDescription: String?
-    private let color:CIColor?
+    let color:CIColor?
     
     var iconImage:UIImage?
     let iconUrl:String
-    private let polyline:String?
+    let polyline:String?
     
     private var stops:[Stop] = []
     
@@ -67,6 +68,14 @@ public class Segment: NSObject {
     
     func getArrivalTime()->NSDate?{
         return self.stops.last?.datetime
+    }
+    
+    func getStartPoint()->CLLocationCoordinate2D?{
+        return self.stops.first?.location
+    }
+    
+    func getDestinationPoint()->CLLocationCoordinate2D?{
+        return self.stops.last?.location
     }
 
 }

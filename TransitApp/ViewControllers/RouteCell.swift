@@ -22,21 +22,28 @@ class RouteCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDe
 
     private weak var route:Route?
     
+    override func prepareForReuse() {
+        self.segmentsCollectionView.delegate = nil
+        self.segmentsCollectionView.delegate = nil
+    }
+    
     func load(route:Route){
+        self.route = route
+
         self.typeLabel.text = route.type.getName()
         
-        if let price = route.amount{
-            self.priceLabel.text = String(price)+" "+String(route.currency!.currencySymbol())
+        if let price = self.route?.getPrice(){
+            self.priceLabel.text = price
         }else{
             self.priceLabel.text = "Unknown"
         }
+        
         self.providerLabel.text = route.provider
         self.travelTimeLabel.text = String(route.getArrivelTime()!.minutesFrom(route.getStartTime()!))
         
         self.arrivelTimeLabel.text = route.getArrivelTime()?.hoursAndMinuts()
         self.startTimeLabel.text = route.getStartTime()?.hoursAndMinuts()
         
-        self.route = route
         segmentsCollectionView.dataSource = self
         segmentsCollectionView.delegate = self
         segmentsCollectionView.reloadData()
@@ -57,25 +64,26 @@ class RouteCell: UITableViewCell, UICollectionViewDataSource, UICollectionViewDe
         let  cell = collectionView.dequeueReusableCellWithReuseIdentifier("segment", forIndexPath: indexPath) as! SegmentCell
         
         let segment = route!.getMoveSegment(indexPath.row)
-        
         cell.nameLabel.text = segment?.name
         
         let iconURL = NSURL(string: segment!.iconUrl)
         let imageRequest = NSURLRequest(URL: iconURL!)
+        
         cell.segmentImage.delegate = self
         cell.segmentImage.loadRequest(imageRequest)
         
         return cell
     }
     
-    
-    /* Workaround to solve the invisible SVG problem */
+    /* Workaround to solve the "invisible" SVG problem */
     func webViewDidFinishLoad(webView: UIWebView) {
+        webView.delegate = nil
+        
         webView.backgroundColor = UIColor.clearColor()
         webView.opaque = false
         webView.scrollView.scrollEnabled = false
         
-        let script = "var svgElement = document.getElementById('Layer_1');svgElement.style.stroke = \"#474a51\";svgElement.style.strokeWidth = 2;"
+        let script = "var svgElement = document.getElementById('Layer_1');svgElement.style.stroke = \"#474a51\";svgElement.style.strokeWidth = 2.5;"
         webView.stringByEvaluatingJavaScriptFromString(script)
         
         let contentSize = webView.scrollView.contentSize

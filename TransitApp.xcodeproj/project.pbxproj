@@ -33,6 +33,7 @@
 		B1E116221CA7024400580BE1 /* RouteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E116211CA7024400580BE1 /* RouteCell.swift */; };
 		B1E116241CA7061D00580BE1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E116231CA7061D00580BE1 /* Extensions.swift */; };
 		B1E116261CA73EE600580BE1 /* SegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E116251CA73EE600580BE1 /* SegmentCell.swift */; };
+		B1E116281CA77D8D00580BE1 /* RouteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E116271CA77D8D00580BE1 /* RouteDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		B1E116211CA7024400580BE1 /* RouteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteCell.swift; path = ViewControllers/RouteCell.swift; sourceTree = "<group>"; };
 		B1E116231CA7061D00580BE1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Util/Extensions.swift; sourceTree = "<group>"; };
 		B1E116251CA73EE600580BE1 /* SegmentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegmentCell.swift; path = ViewControllers/SegmentCell.swift; sourceTree = "<group>"; };
+		B1E116271CA77D8D00580BE1 /* RouteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteDetailViewController.swift; path = ViewControllers/RouteDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +255,7 @@
 				B1E1161F1CA6FE6600580BE1 /* RoutesTableViewController.swift */,
 				B1E116211CA7024400580BE1 /* RouteCell.swift */,
 				B1E116251CA73EE600580BE1 /* SegmentCell.swift */,
+				B1E116271CA77D8D00580BE1 /* RouteDetailViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				B1D3494B1CA5DD0000DCEF5E /* Provider.swift in Sources */,
 				B1E116261CA73EE600580BE1 /* SegmentCell.swift in Sources */,
 				B1BABC5A1CA5606C00EDB17D /* SearchViewController.swift in Sources */,
+				B1E116281CA77D8D00580BE1 /* RouteDetailViewController.swift in Sources */,
 				B1D3494D1CA5E75A00DCEF5E /* LocationManager.swift in Sources */,
 				B1E1161B1CA6F07400580BE1 /* Constants.swift in Sources */,
 				B1E116241CA7061D00580BE1 /* Extensions.swift in Sources */,

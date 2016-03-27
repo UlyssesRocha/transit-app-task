@@ -9,7 +9,7 @@
 import CoreLocation
 
 public class Stop: NSObject {
-    private let location:CLLocationCoordinate2D?
+    let location:CLLocationCoordinate2D?
     let datetime:NSDate?
     private let name:String?
     

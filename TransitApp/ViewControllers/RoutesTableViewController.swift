@@ -16,18 +16,19 @@ class RoutesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        DataManager.sharedInstance.loadRoutes("", destination: "", atTime: nil) { (routes, providers, error) in
+        DataManager.sharedInstance.loadRoutes("", destination: "", atTime: nil) {  [weak self] (routes, providers, error) in
+            
             if error != nil{
                 return
             }
-            self.routes = routes
-            self.providers = providers
             
-            self.tableView.reloadData()
+            self?.routes = routes
+            self?.providers = providers
+            self?.tableView.reloadData()
         }
     }
 
-    // MARK: - Table view data source
+    // MARK: Table view data source
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -43,8 +44,20 @@ class RoutesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("routeCell", forIndexPath: indexPath) as! RouteCell
         
         cell.load(routes![indexPath.row])
-
         return cell
     }
+    
+    //MARK: Show Detail
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("showDetail", sender: self.routes![indexPath.row])
+    }
 
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDetail" {
+            let viewController:RouteDetailViewController = segue.destinationViewController as! RouteDetailViewController
+            viewController.route = sender as? Route
+        }
+
+    }
 }
