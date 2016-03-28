@@ -1,5 +1,7 @@
 # transit-app-task
-A small app that simulate a transit app, extracting information from a static JSON file.
+A exercise that simulate a transit app, extracting information from a static JSON file.
+
+**Build in Xcode 7.3 with Swift 2**
 
 Base mockup
 https://mockingbot.com/app/92dc4d007b84829b17889f951383fd6ba1f7444a
