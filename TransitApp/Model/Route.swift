@@ -54,7 +54,9 @@ public class Route: NSObject {
     
     func getPrice()->String?{
         if let price = self.amount{
-            return String(price)+" "+String(self.currency!.currencySymbol())
+            let value = Int(floor(price/100))
+            let cents = Int(price%100)
+            return String(value)+"."+String(cents)+" "+String(self.currency!.currencySymbol())
         }
         return nil
     }
