@@ -1,6 +1,9 @@
 # transit-app-task
 A small app that simulate a transit app, extracting information from a static JSON file.
 
+Base mockup
+https://mockingbot.com/app/92dc4d007b84829b17889f951383fd6ba1f7444a
+
 **iOS and WatchOS**
 <p align="center">
   <img src="https://cloud.githubusercontent.com/assets/6699862/14068687/8021ed9c-f461-11e5-9241-efad90be0a7c.png" width="150"/>
